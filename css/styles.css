@@ -1,0 +1,154 @@
+header {
+  display: flex;
+  align-items: center;
+  font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300)));
+  justify-content: center;
+  margin-bottom: 2em;
+  background: #000;
+  color: #fff;
+  min-height: 10vh;
+  text-align: center;
+}
+
+ul {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 1em;
+  margin: 0 auto;
+  max-width: 64em;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  list-style: none;
+  margin-left: 0;
+  font-size: calc(16px + (21 - 16) * ((100vw - 300px) / (1600 - 300)));
+}
+
+ul.animations li {
+  background-color: #eaeaea;
+  border: 1px solid #eaeaea;
+  height: 10vw;
+  max-height: 125px;
+}
+
+ul.animations li:nth-child(1),
+ul.animations li:nth-child(2),
+ul.animations li:nth-child(3),
+ul.animations li:nth-child(34),
+ul.animations li:nth-child(35) {
+  background-color: #fff;
+}
+
+/* Animated hamburger Start*/
+
+.mobile-menu {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+}
+
+.mobile-menu span {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+
+.mobile-menu span,
+.mobile-menu span:after,
+.mobile-menu span:before {
+  /* transition: background-color 1000ms linear; */
+  height: 2px;
+  background-color: rgba(59, 70, 80, 0.8);
+  -webkit-transition: 0.15s cubic-bezier(0.97, 0.75, 0.61, 1.84);
+  transition: 0.15s cubic-bezier(0.97, 0.75, 0.61, 1.84);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 3px;
+}
+
+.mobile-menu span:after,
+.mobile-menu span:before {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.mobile-menu span:after {
+  top: 6px;
+  width: 70%;
+}
+
+.mobile-menu span:before {
+  top: -6px;
+  width: 40%;
+}
+
+.mobile-menu:hover span {
+  background-color: #3b4650;
+  /* background-color: #18ffff; */
+}
+
+.mobile-menu:hover span:after,
+.mobile-menu:hover span:before {
+  background-color: #3b4650;
+  /* background-color: #18ffff; */
+  width: 100%;
+}
+
+/* Animated hamburger End*/
+
+/* Animated Menu Open */
+.menu-rotate {
+  transition: all 0.3s ease;
+}
+
+.menu-rotate:hover {
+  transform: rotate(90deg);
+}
+/* Animated Menu Open End */
+
+/* Swing Animation Start */
+.swing {
+  /* display: inline-block; */
+}
+.swing:hover {
+  /* display: inline-block; */
+  animation: swing ease-in-out 0.3s 1 alternate;
+}
+
+@keyframes swing {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(10deg);
+  }
+  30% {
+    transform: rotate(0deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  60% {
+    transform: rotate(5deg);
+  }
+  70% {
+    transform: rotate(0deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+/* Swing Animation End */
